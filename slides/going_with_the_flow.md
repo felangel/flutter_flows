@@ -232,7 +232,7 @@ void dispose() {
 
 ```dart
 @override
-Widget build(BuildContext) {
+Widget build(BuildContext context) {
   final controller = context.flow<Profile>();
 }
 ```
