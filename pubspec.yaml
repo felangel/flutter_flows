@@ -1,0 +1,15 @@
+name: flutter_flows
+description: A sample Flutter project which demonstrates how to use flow_builder.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flow_builder: ^0.0.1-dev.13
+
+flutter:
+  uses-material-design: true
