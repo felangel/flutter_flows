@@ -36,10 +36,8 @@ class OnboardingFlow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlowBuilder(
-      state: OnboardingState.initial,
-      onGeneratePages: onGenerateOnboardingPages,
-    );
+    // TODO: Create a FlowBuilder
+    return const SizedBox();
   }
 }
 
@@ -53,7 +51,9 @@ class OnboardingWelcome extends StatelessWidget {
       backgroundColor: Colors.yellow,
       appBar: AppBar(
         leading: BackButton(
-          onPressed: () => context.flow<OnboardingState>().complete(),
+          onPressed: () {
+            // TODO: Complete Flow
+          },
         ),
         title: Text('Welcome'),
       ),
@@ -70,9 +70,9 @@ class OnboardingWelcome extends StatelessWidget {
               ),
               OutlineButton(
                 child: Text('Got It!'),
-                onPressed: () => context
-                    .flow<OnboardingState>()
-                    .update((_) => OnboardingState.welcomeComplete),
+                onPressed: () {
+                  // TODO: Update the Flow
+                },
               )
             ],
           ),
@@ -104,9 +104,9 @@ class OnboardingUsage extends StatelessWidget {
               ),
               OutlineButton(
                 child: Text('Next'),
-                onPressed: () => context
-                    .flow<OnboardingState>()
-                    .update((_) => OnboardingState.usageComplete),
+                onPressed: () {
+                  // TODO: Update the Flow
+                },
               )
             ],
           ),
@@ -138,9 +138,9 @@ class OnboardingComplete extends StatelessWidget {
               ),
               OutlineButton(
                 child: Text('Yay!'),
-                onPressed: () => context
-                    .flow<OnboardingState>()
-                    .complete((_) => OnboardingState.onboardingComplete),
+                onPressed: () {
+                  // TODO: Complete the Flow
+                },
               )
             ],
           ),

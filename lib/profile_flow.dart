@@ -28,10 +28,8 @@ class ProfileFlow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlowBuilder(
-      state: const Profile(),
-      onGeneratePages: onGenerateProfilePages,
-    );
+    // TODO: Create a FlowBuilder
+    return const SizedBox();
   }
 }
 
@@ -46,9 +44,7 @@ class _ProfileNameState extends State<ProfileName> {
   var _name = '';
 
   void _onNext() {
-    context.flow<Profile>().update((profile) {
-      return profile.copyWith(name: _name);
-    });
+    // TODO: Update the Flow
   }
 
   @override
@@ -57,7 +53,9 @@ class _ProfileNameState extends State<ProfileName> {
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
-          onPressed: () => context.flow<Profile>().complete(),
+          onPressed: () {
+            // TODO: Complete the Flow
+          },
         ),
         title: const Text('Profile Name'),
       ),
@@ -98,9 +96,7 @@ class _ProfileAgeState extends State<ProfileAge> {
   int _age;
 
   void _onComplete() {
-    context.flow<Profile>().complete((profile) {
-      return profile.copyWith(age: _age);
-    });
+    // TODO: Complete the Flow
   }
 
   @override
