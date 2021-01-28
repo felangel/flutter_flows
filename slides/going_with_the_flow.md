@@ -31,16 +31,76 @@ slidenumbers: true
 
 ---
 
-# What is FlowBuilder?
+# What is FlowBuilder? 🙋
 
-- Navigator 2.0 Pages API Abstraction
-- Small API Surface
-- Pages = Function(State)
-- Decouple Routing Logic from Widget Tree
+## ❓❓❓
 
 ---
 
-# What is FlowBuilder Cont.?
+## Navigator 2.0 Pages API Abstraction
+
+---
+
+## In Depth Look at Navigator 2.0
+
+![inline](navigator2.0.png)
+
+### https://youtu.be/GxoFl5kzJgE
+
+---
+
+# Why Navigator 2.0 Pages API Abstraction?
+
+![inline](navigator_push.png)
+
+---
+
+# Why Navigator 2.0 Pages API Abstraction?
+
+```dart
+// Return a Navigator with a list of Pages representing the current app state.
+return Navigator(
+  key: navigatorKey,
+  onPopPage: _handlePopPage,
+  pages: [
+    MaterialPageBuilder(
+      key: ValueKey<String>('home'),
+      builder: (context) => HomePageWidget(),
+    ),
+    if (state.searchQuery != null)
+      MaterialPageBuilder(
+        key: ValueKey<String>('search'),
+        builder: (context) => SearchPageWidget(),
+      ),
+    if (state.stockSymbol != null)
+      MaterialPageBuilder(
+        key: ValueKey<String>('details'),
+        builder: (context) => DetailsPageWidget(),
+      ),
+  ],
+);
+```
+
+---
+
+# Why Navigator 2.0 Pages API Abstraction?
+
+"We hope that you’ll join us in exploring what a higher-level API built on top of these features can do for users."
+
+- John Ryan
+
+---
+
+# Why FlowBuilder?
+
+- Small API Surface
+- Pages = Function(State)
+- Decouple Routing Logic from Widget Tree
+- Flexible, Declarative API
+
+---
+
+# Why FlowBuilder Cont.?
 
 - Handles System Navigation
   - Android Hardware Back
@@ -51,15 +111,21 @@ slidenumbers: true
 
 ---
 
-# How does I use it? 🤔
+# How do I use it? 🤔
 
 ---
 
 # Add package:flow_builder
 
+- Add the dependency to your `pubspec.yaml`
+
 ```yaml
 dependencies:
   flow_builder: ^0.0.1-dev.13
+```
+
+```sh
+$ flutter packages get
 ```
 
 ---
@@ -82,6 +148,8 @@ class Profile {
 }
 ```
 
+- What is driving the navigation?
+
 ---
 
 # Create a FlowBuilder
@@ -98,6 +166,8 @@ return FlowBuilder(
 );
 ```
 
+- Think of it like a `Navigator` widget
+
 ---
 
 # 💡 Tip: Create Static Page Methods
@@ -109,6 +179,9 @@ class ProfileName extends StatefulWidget {
   @override
   _ProfileNameState createState() => _ProfileNameState();
 }
+
+// Later...
+final page = ProfileName.page();
 ```
 
 ---
@@ -210,6 +283,18 @@ OutlineButton(
 dependencies:
   flow_builder: ^0.0.1-nullsafety.0
 ```
+
+---
+
+# Start a Discussion! 🙌
+
+![inline](discussions.png)
+
+---
+
+# What's Next?
+
+![inline](future.png)
 
 ---
 
