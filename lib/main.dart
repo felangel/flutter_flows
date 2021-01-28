@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_flows/onboarding_flow.dart';
 import 'package:flutter_flows/profile_flow.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
